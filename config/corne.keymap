@@ -18,6 +18,7 @@
 // | CTRL |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
 // | DEL  |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
                         bindings = <
    &kp ESC      &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp TAB      &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
@@ -36,6 +37,7 @@
    &trans   &bt BT_SEL 0 &kp LEFT     &kp DOWN    &kp RIGHT   &trans      &trans   &kp N4     &kp N5 &kp N6   &trans &trans
    &trans   &trans       &trans       &trans      &trans      &trans      &trans   &kp N1     &kp N2 &kp N3   &trans &trans
                           	  &kp LGUI   &trans  &trans       &kp RET  &kp N0   &kp RALT
+
                         >;
                 };
 
