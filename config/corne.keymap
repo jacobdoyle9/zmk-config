@@ -40,7 +40,7 @@
                         bindings = <
 
    &kp ESC      &kp Q           &kp W       &kp F           &kp P &kp B                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
-   &kp TAB      &mt LC(A) A     &kp R       &kp S           &kp T &kp G                 &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
+   &kp TAB      &kp A     &kp R       &kp S           &kp T &kp G                 &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
    &kp LCTRL    &mt K_UNDO Z    &mt K_CUT X &mt K_COPY C    &kp D &kp V                 &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &to 3
                                 &kp LGUI    &mo 1           &mt LSHFT CAPS              &kp SPACE &mo 2 &kp RALT
                         
@@ -72,8 +72,8 @@
                         bindings = <
    &kp ESC      &kp F3          &kp Q &kp W &kp E &kp G         &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp PG_DN    &kp LSHFT       &kp A &kp S &kp D &kp F         &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &kp PG_UP    &kp LCTRL       &kp Z &kp X &kp C &kp B         &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
-                                &none &kp LCTRL &kp SPACE       &kp SPACE &mo 2 &kp RALT
+   &kp PG_UP    &kp LCTRL       &kp N3 &kp N4 &kp  &kp N5         &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
+                                &kp N2 &kp N1 &kp SPACE       &kp SPACE &mo 2 &kp RALT
                         
                         >;
                 };
