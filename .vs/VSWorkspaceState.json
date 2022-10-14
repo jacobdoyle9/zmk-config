@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github\\workflows",
     "\\config"
   ],
-  "SelectedNode": "\\config\\west.yml",
+  "SelectedNode": "\\config\\corne.keymap",
   "PreviewInSolutionExplorer": false
 }

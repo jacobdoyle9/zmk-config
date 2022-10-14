@@ -19,6 +19,15 @@
     };
 };
 
+&mmv {
+    time-to-max-speed-ms = <500>;
+};
+
+&mwh {
+    acceleration-exponent=<1>;
+};
+
+
 / {
     macros {
         screen_left: screen_left {
@@ -43,6 +52,7 @@
         };
     };
 };
+
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -81,10 +91,10 @@
 
                 game_layer {
                         bindings = <
-   &kp ESC      &kp F3          &kp Q &kp W &kp E &kp G         &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
-   &kp PG_DN    &kp LSHFT       &kp A &kp S &kp D &kp F         &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &kp PG_UP    &kp LCTRL       &kp N3 &kp N4 &kp  &kp N5         &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
-                                &kp N2 &kp N1 &kp SPACE       &kp SPACE &mo 2 &kp RALT
+   &kp ESC      &kp F3          &kp Q   &kp W   &kp E &kp G         &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
+   &kp PG_DN    &kp LSHFT       &kp A   &kp S   &kp D &kp F         &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
+   &kp PG_UP    &kp LCTRL       &kp N3  &kp N4  &kp  &kp N5       &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
+                                &kp N2  &kp N1  &kp SPACE       &kp SPACE &mo 2 &kp RALT
                         
                         >;
                 };
