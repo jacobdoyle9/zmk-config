@@ -7,6 +7,17 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
+
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <4>;
+        };
+    };
+};
 
 / {
     macros {
@@ -39,10 +50,10 @@
                 default_layer {
                         bindings = <
 
-   &kp ESC      &kp Q           &kp W       &kp F           &kp P &kp B                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
-   &kp TAB      &kp A     &kp R       &kp S           &kp T &kp G                 &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &kp LCTRL    &mt K_UNDO Z    &mt K_CUT X &mt K_COPY C    &kp D &kp V                 &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &to 3
-                                &kp LGUI    &mo 1           &mt LSHFT CAPS              &kp SPACE &mo 2 &kp RALT
+   &kp ESC      &kp Q     &kp W     &kp F   &kp P &kp B                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
+   &kp TAB      &kp A     &kp R     &kp S   &kp T &kp G                 &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
+   &kp LCTRL    &kp Z     &kp X     &kp C   &kp D &kp V                 &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &to 3
+                                &kp LGUI    &mo 1   &mt LSHFT CAPS              &kp SPACE &mo 2 &kp RALT
                         
                         >;
                 };
@@ -52,7 +63,7 @@
    &bt BT_CLR   &bt BT_SEL 1 &trans       &kp UP        &trans      &trans                &none       &mt F7 N7   &mt F8 N8   &mt F9 N9   &none &kp DEL
    &trans       &bt BT_SEL 0 &kp LEFT     &kp DOWN      &kp RIGHT   &trans                &none       &mt F4 N4   &mt F5 N5   &mt F6 N6   &none &kp END
    &trans       &trans       &trans       &trans        &trans      &trans                &kp N0      &mt F1 N1   &mt F2 N2   &mt F3 N3   &none &none
-                          	              &kp LGUI      &trans      &trans                &kp RET     &kp N0      &kp HOME
+                          	              &kp LGUI      &trans      &trans                &kp RET     &trans      &kp HOME
 
                         >;
                 };
@@ -61,7 +72,7 @@
                         bindings = <
 
    &kp TAB      &kp EXCL    &kp AT &none        &kp PRCNT       &kp CARET                       &kp HASH    &kp LPAR  &kp RPAR  &kp PLUS    &kp STAR    &kp BSPC
-   &kp LCTRL    &kp AT      &none &screen_left  &screen_right   &kp EXCL                        &kp EQUAL   &kp LBKT  &kp RBKT  &kp MINUS   &kp BSLH    &kp GRAVE
+   &kp LCTRL    &kp AMPS    &none &screen_left  &screen_right   &kp EXCL                        &kp EQUAL   &kp LBKT  &kp RBKT  &kp MINUS   &kp BSLH    &kp GRAVE
    &kp LSHFT    &none       &none &none         &kp DLLR        &trans                          &none       &kp LBRC  &kp RBRC  &kp UNDER   &kp PIPE    &kp TILDE
                     	    &kp LGUI            &trans          &kp SPACE                       &kp RET     &trans    &kp RALT
                         
@@ -74,6 +85,16 @@
    &kp PG_DN    &kp LSHFT       &kp A &kp S &kp D &kp F         &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
    &kp PG_UP    &kp LCTRL       &kp N3 &kp N4 &kp  &kp N5         &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
                                 &kp N2 &kp N1 &kp SPACE       &kp SPACE &mo 2 &kp RALT
+                        
+                        >;
+                };
+
+                mouse_layer {
+                        bindings = <
+   &trans      &trans &trans            &mmv MOVE_UP        &trans          &trans                &none       &mwh SCROLL_UP    &none       &none       &none &none
+   &trans      &trans &mmv MOVE_LEFT    &mmv MOVE_DOWN      &mmv MOVE_RIGHT &trans                &none       &mkp LCLK         &mkp RCLK   &mkp MCLK   &none &none
+   &trans      &trans &trans            &trans              &trans          &trans                &none       &mwh SCROLL_DOWN  &none       &none       &none
+                          	             &kp LGUI      &trans      &none                &none     &trans      &none
                         
                         >;
                 };
