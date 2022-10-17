@@ -92,7 +92,7 @@
 
                 mouse_layer {
                         bindings = <
-   &trans      &trans &trans            &mmv MOVE_UP        &trans          &trans                &none       &mwh SCROLL_UP    &none       &none       &none &none
+   &trans      &trans &kp K_BACK        &mmv MOVE_UP        &kp K_FORWARD   &trans                &none       &mwh SCROLL_UP    &none       &none       &none &none
    &trans      &trans &mmv MOVE_LEFT    &mmv MOVE_DOWN      &mmv MOVE_RIGHT &trans                &none       &mkp LCLK         &mkp RCLK   &mkp MCLK   &none &none
    &trans      &trans &trans            &trans              &trans          &trans                &none       &mwh SCROLL_DOWN  &none       &none       &none
                           	             &kp LGUI      &trans      &none                &none     &trans      &none
