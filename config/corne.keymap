@@ -51,7 +51,7 @@
                 default_layer {
                         bindings = <
 
-   &mt LC(LA(DEL)) ESC      &kp Q     &kp W     &kp F   &kp P &kp B                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
+   &mt LC(LA(DEL)) ESC      &kp Q     &kp W     &kp F   &kp P &kp B                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp DEL
    &kp TAB                  &kp A     &kp R     &kp S   &kp T &kp G                 &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
    &kp LALT                 &kp Z     &kp X     &kp C   &kp D &kp V                 &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &to 3
                                 &kp LGUI    &mo 1   &mt LSHFT CAPS              &mt RET SPACE &mo 2 &sk LCTRL
@@ -72,9 +72,9 @@
                 raise_layer {
                         bindings = <
 
-   &kp TAB      &kp EXCL    &kp AT &none        &kp PRCNT       &kp CARET                       &kp HASH    &kp LPAR  &kp RPAR  &kp PLUS    &kp STAR    &kp BSPC
-   &kp LCTRL    &kp AMPS    &none &screen_left  &screen_right   &kp EXCL                        &kp EQUAL   &kp LBKT  &kp RBKT  &kp MINUS   &kp BSLH    &kp GRAVE
-   &kp LSHFT    &none       &none &none         &kp DLLR        &trans                          &none       &kp LBRC  &kp RBRC  &kp UNDER   &kp PIPE    &kp TILDE
+   &kp TAB      &kp EXCL    &kp AT &none        &kp PRCNT       &kp CARET                       &kp HASH    &kp LBKT  &kp RBKT  &kp PLUS    &kp STAR    &kp PIPE
+   &kp LCTRL    &kp AMPS    &none &screen_left  &screen_right   &kp EXCL                        &kp EQUAL   &kp LPAR  &kp RPAS  &kp MINUS   &kp BSLH    &kp GRAVE
+   &kp LSHFT    &none       &none &none         &kp DLLR        &trans                          &none       &kp LBRC  &kp RBRC  &kp UNDER   &kp AMPS    &kp TILDE
                     	    &kp LGUI            &trans          &kp DEL                         &kp RET     &trans    &kp RALT
                         
                         >;
@@ -82,7 +82,7 @@
 
                 game_layer {
                         bindings = <
-   &kp ESC      &kp F3          &kp Q   &kp W   &kp E   &kp G         &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
+   &kp F3       &kp ESC         &kp Q   &kp W   &kp E   &mt T G       &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp PG_DN    &kp LSHFT       &kp A   &kp S   &kp D   &kp F         &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
    &kp PG_UP    &kp LCTRL       &kp N3  &kp N4  &kp N5  &kp N6        &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
                                 &kp N2  &kp N1  &kp SPACE             &kp SPACE &mo 2 &kp RALT
@@ -92,9 +92,9 @@
 
                 mouse_layer {
                         bindings = <
-   &trans      &trans &kp C_AC_BACK     &mmv MOVE_UP        &kp C_AC_FORWARD   &trans                &none       &mwh SCROLL_UP    &none       &none       &none &none
-   &trans      &trans &mmv MOVE_LEFT    &mmv MOVE_DOWN      &mmv MOVE_RIGHT &trans                &none       &mkp LCLK         &mkp RCLK   &mkp MCLK   &none &none
-   &trans      &trans &trans            &trans              &trans          &trans                &none       &mwh SCROLL_DOWN  &none       &none       &none
+   &trans      &trans &kp LG(LBKT)      &mmv MOVE_UP        &kp LG(RBKT)        &trans                &none       &mwh SCROLL_UP    &none       &none       &none &none
+   &trans      &trans &mmv MOVE_LEFT    &mmv MOVE_DOWN      &mmv MOVE_RIGHT     &trans                &none       &mkp LCLK         &mkp RCLK   &mkp MCLK   &none &none
+   &trans      &trans &trans            &trans              &trans              &trans                &none       &mwh SCROLL_DOWN  &none       &none       &none
                           	             &kp LGUI      &trans      &none                &none     &trans      &none
                         
                         >;
