@@ -51,9 +51,9 @@
                 default_layer {
                         bindings = <
 
-   &mt LC(LA(DEL)) ESC      &kp Q     &kp W     &kp F   &kp P &kp B                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp DEL
+   &mt LA(F4) ESC           &kp Q     &kp W     &kp F   &kp P &kp B                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &mt LC(LA(DEL)) DEL
    &kp TAB                  &kp A     &kp R     &kp S   &kp T &kp G                 &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &kp LALT                 &kp Z     &kp X     &kp C   &kp D &kp V                 &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &to 3
+   &sk LALT                 &kp Z     &kp X     &kp C   &kp D &kp V                 &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &to 3
                                 &kp LGUI    &mo 1   &mt LSHFT CAPS              &mt RET SPACE &mo 2 &sk LCTRL
                         
                         >;
@@ -61,8 +61,8 @@
                 lower_layer {
                         bindings = <
 
-   &bt BT_CLR   &bt BT_SEL 1 &trans       &kp UP        &trans      &trans                &none       &mt F7 N7   &mt F8 N8   &mt F9 N9   &none &kp DEL
-   &trans       &bt BT_SEL 0 &kp LEFT     &kp DOWN      &kp RIGHT   &trans                &none       &mt F4 N4   &mt F5 N5   &mt F6 N6   &none &kp END
+   &bt BT_CLR   &bt BT_SEL 1 &trans       &kp UP        &trans      &trans                &none       &mt F7 N7   &mt F8 N8   &mt F9 N9   &none &mt LC(LA(DEL)) DEL
+   &trans       &bt BT_SEL 0 &kp LEFT     &kp DOWN      &kp RIGHT   &trans                &kp LSHFT   &mt F4 N4   &mt F5 N5   &mt F6 N6   &none &kp END
    &trans       &trans       &trans       &trans        &trans      &trans                &kp N0      &mt F1 N1   &mt F2 N2   &mt F3 N3   &none &none
                           	              &kp LGUI      &trans      &trans                &kp BSPC    &trans      &kp HOME
 
