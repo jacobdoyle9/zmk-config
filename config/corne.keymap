@@ -45,6 +45,18 @@
 };
 
 / {
+    behaviors {
+        spret: space_return {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPACE_RETURN";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp RET>;
+            mods = <MOD_LSFT>;
+        };
+    };
+};
+
+/ {
         keymap {
                 compatible = "zmk,keymap";
 
@@ -54,7 +66,7 @@
    &mt LA(F4) ESC           &kp Q     &kp W     &kp F   &kp P &kp B                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &mt LC(LA(DEL)) DEL
    &kp TAB                  &kp A     &kp R     &kp S   &kp T &kp G                 &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
    &sk LALT                 &kp Z     &kp X     &kp C   &kp D &kp V                 &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &to 3
-                                &kp LGUI    &mo 1   &mt LSHFT CAPS              &mt RET SPACE &mo 2 &sk LCTRL
+                                &kp LGUI    &mo 1   &mt LSHFT CAPS                      &spret &mo 2 &sk LCTRL
                         
                         >;
                 };
@@ -82,9 +94,9 @@
 
                 game_layer {
                         bindings = <
-   &kp F3       &kp ESC         &kp Q   &kp W   &kp E   &mt T G       &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
+   &kp F3       &kp ESC         &kp Q   &kp W   &kp E   &kp B         &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp PG_DN    &kp LSHFT       &kp A   &kp S   &kp D   &kp F         &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &kp PG_UP    &kp LCTRL       &kp N3  &kp N4  &kp N5  &kp N6        &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
+   &kp PG_UP    &kp LCTRL       &kp G   &kp P   &kp M   &kp N         &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
                                 &kp N2  &kp N1  &kp SPACE             &kp SPACE &mo 2 &kp RALT
                         
                         >;
