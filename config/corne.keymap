@@ -41,6 +41,16 @@
                 , <&macro_release &kp LGUI &kp LCTRL>
                 ;
         };
+        mass_craft: mass_craft {
+            label = "MASS_CRAFT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LALT &kp C>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp LCTRL &kp LALT &kp C>
+                ;
+        }
     };
 };
 
@@ -82,10 +92,10 @@
                 lower_layer {
                         bindings = <
 
-   &bt BT_CLR   &bt BT_SEL 1 &trans       &kp UP        &trans      &trans                &none       &mt F7 N7   &mt F8 N8   &mt F9 N9   &none &mt LC(LA(DEL)) DEL
-   &trans       &bt BT_SEL 0 &kp LEFT     &kp DOWN      &kp RIGHT   &trans                &kp LSHFT   &mt F4 N4   &mt F5 N5   &mt F6 N6   &none &kp END
-   &trans       &trans       &trans       &trans        &trans      &trans                &kp N0      &mt F1 N1   &mt F2 N2   &mt F3 N3   &none &none
-                          	              &kp LGUI      &trans      &trans                &kp BSPC    &trans      &kp HOME
+   &bt BT_CLR   &bt BT_SEL 2    &trans       &kp UP        &trans      &trans                &none       &mt F7 N7   &mt F8 N8   &mt F9 N9   &none &mt LC(LA(DEL)) DEL
+   &trans       &bt BT_SEL 1    &kp LEFT     &kp DOWN      &kp RIGHT   &trans                &kp LSHFT   &mt F4 N4   &mt F5 N5   &mt F6 N6   &none &kp END
+   &trans       &bt BT_SEL 0    &trans       &trans        &trans      &trans                &kp N0      &mt F1 N1   &mt F2 N2   &mt F3 N3   &none &none
+                          	              &kp LGUI      &trans      &trans                        &kp BSPC    &trans      &kp HOME
 
                         >;
                 };
@@ -103,10 +113,10 @@
 
                 game_layer {
                         bindings = <
-   &kp F3       &kp ESC         &kp Q   &kp W   &kp E   &kp B         &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
-   &kp PG_DN    &kp LSHFT       &kp A   &kp S   &kp D   &kp F         &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &kp PG_UP    &kp LCTRL       &kp G   &kp P   &kp M   &kp N         &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
-                                &kp N2  &kp N1  &kp SPACE             &kp SPACE &mo 2 &kp RALT
+   &kp F3       &kp ESC         &kp Q       &kp W   &kp E   &mass_craft     &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
+   &kp PG_DN    &kp LSHFT       &kp A       &kp S   &kp D   &kp F           &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
+   &kp PG_UP    &kp LCTRL       &mt B G     &kp P   &kp M   &kp N           &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
+                                &kp N2  &kp N1  &kp SPACE                       &kp SPACE &mo 2 &kp RALT
                         
                         >;
                 };
