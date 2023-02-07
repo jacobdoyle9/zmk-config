@@ -50,7 +50,7 @@
                 , <&macro_pause_for_release>
                 , <&macro_release &kp LCTRL &kp LALT &kp C>
                 ;
-        }
+        };
     };
 };
 
