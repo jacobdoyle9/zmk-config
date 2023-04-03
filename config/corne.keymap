@@ -112,10 +112,10 @@
                 };
 
                 game_layer {
-                        bindings = <
-   &kp F3           &kp ESC         &kp Q       &kp W   &kp E   &mass_craft     &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
-   &mt PG_DN PG_UP  &kp LSHFT       &kp A       &kp S   &kp D   &kp F           &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &kp LALT         &kp LCTRL       &mt B G     &kp P   &kp M   &kp N           &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
+                		bindings = <
+	&kp F3           &kp ESC         &kp Q       &kp W   &kp E   &mass_craft     &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
+	&mt PG_DN PG_UP  &kp LSHFT       &kp A       &kp S   &kp D   &kp F           &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
+	&kp LALT         &kp LCTRL       &mt B G     &kp P   &kp M   &kp N           &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
                                 &kp N2  &kp N1  &kp SPACE                       &trans &to 0 &kp RALT
                         
                         >;
