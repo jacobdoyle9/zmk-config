@@ -84,8 +84,8 @@
 
    &mt LA(F4) ESC           &kp Q     &kp W     &kp F   &kp P &kp B                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &mt LC(LA(DEL)) DEL
    &kp TAB                  &kp A     &kp R     &kp S   &kp T &kp G                 &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &sk LALT                 &kp Z     &kp X     &kp C   &kp D &kp V                 &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &to 3
-                                &kp LGUI    &mo 1   &mt LSHFT CAPS                      &sret &mo 2 &sk LCTRL
+   &sk LCTRL                 &kp Z     &kp X     &kp C   &kp D &kp V                 &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &to 3
+                                &kp LGUI    &mo 1   &mt LSHFT CAPS                      &sret &mo 2 &sk LALT
                         
                         >;
                 };
