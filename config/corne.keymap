@@ -103,6 +103,7 @@
                 raise_layer {
                         bindings = <
 
+
    &kp LC(LA(T))  &kp EXCL    &kp AT &none        &kp PRCNT       &kp CARET                       &kp HASH    &kp LBKT  &kp RBKT  &kp PLUS    &kp STAR    &kp PIPE
    &kp LCTRL      &kp AMPS    &none &screen_left  &screen_right   &kp EXCL                        &kp EQUAL   &kp LPAR  &kp RPAR  &kp MINUS   &kp BSLH    &kp GRAVE
    &kp LSHFT      &none       &none &none         &kp DLLR        &trans                          &kp CARET   &kp LBRC  &kp RBRC  &kp UNDER   &kp AMPS    &kp TILDE
