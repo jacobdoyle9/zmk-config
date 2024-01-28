@@ -92,9 +92,9 @@
                 lower_layer {
                         bindings = <
 
-   &bt BT_CLR   &bt BT_SEL 2    &trans       &kp UP        &trans      &trans                &none       &mt F7 N7   &mt F8 N8   &mt F9 N9   &none &mt LC(LA(DEL)) DEL
+   &bt BT_CLR   &bt BT_SEL 2    &trans       &kp UP        &trans      &trans                &none       &mt F7 N7   &mt F8 N8   &mt F9 N9   &none &mt LC(LA(INS)) INS
    &trans       &bt BT_SEL 1    &kp LEFT     &kp DOWN      &kp RIGHT   &trans                &kp LSHFT   &mt F4 N4   &mt F5 N5   &mt F6 N6   &none &kp END
-   &trans       &bt BT_SEL 0    &trans       &trans        &trans      &trans                &kp N0      &mt F1 N1   &mt F2 N2   &mt F3 N3   &none &none
+   &trans       &bt BT_SEL 0    &trans       &trans        &trans      &trans                &kp N0      &mt F1 N1   &mt F2 N2   &mt F3 N3   &kp DOT &none
                           	              &kp LGUI      &trans      &trans                        &kp BSPC    &trans      &kp HOME
 
                         >;
@@ -103,9 +103,10 @@
                 raise_layer {
                         bindings = <
 
-   &kp TAB      &kp EXCL    &kp AT &none        &kp PRCNT       &kp CARET                       &kp HASH    &kp LBKT  &kp RBKT  &kp PLUS    &kp STAR    &kp PIPE
-   &trans       &kp AMPS    &none &screen_left  &screen_right   &kp EXCL                        &kp EQUAL   &kp LPAR  &kp RPAR  &kp MINUS   &kp BSLH    &kp GRAVE
-   &trans       &none       &none &none         &kp DLLR        &trans                          &kp CARET   &kp LBRC  &kp RBRC  &kp UNDER   &kp AMPS    &kp TILDE
+
+   &kp LC(LA(T))  &kp EXCL    &kp AT &none        &kp PRCNT       &kp CARET                       &kp HASH    &kp LBKT  &kp RBKT  &kp PLUS    &kp STAR    &kp PIPE
+   &kp LCTRL      &kp AMPS    &none &screen_left  &screen_right   &kp EXCL                        &kp EQUAL   &kp LPAR  &kp RPAR  &kp MINUS   &kp BSLH    &kp GRAVE
+   &kp LSHFT      &none       &none &none         &kp DLLR        &trans                          &kp CARET   &kp LBRC  &kp RBRC  &kp UNDER   &kp AMPS    &kp TILDE
                     	    &kp LGUI            &trans          &kp DEL                         &trans    &trans    &kp RALT
                         
                         >;
@@ -114,8 +115,8 @@
                 game_layer {
                 		bindings = <
 	&kp F3          &kp ESC         &kp Q       &kp W   &kp R   &kp E           &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
-	&kp TAB         &kp LSHFT       &kp A       &kp S   &kp D   &kp F           &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
-	&kp LALT        &kp LCTRL       &mt B G     &kp P   &kp DOT &kp N           &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
+	&mt TAB DOT     &kp LSHFT       &kp A       &kp S   &kp D   &kp F           &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
+	&kp LALT        &kp LCTRL       &mt B G     &kp P   &kp M   &kp N           &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
                                 &kp N2  &kp N1  &kp SPACE                       &trans &to 0 &kp RALT
                         
                         >;
