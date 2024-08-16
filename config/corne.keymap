@@ -41,16 +41,6 @@
                 , <&macro_release &kp LGUI &kp LCTRL>
                 ;
         };
-        mass_craft: mass_craft {
-            label = "MASS_CRAFT";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LALT &kp C>
-                , <&macro_pause_for_release>
-                , <&macro_release &kp LCTRL &kp LALT &kp C>
-                ;
-        };
     };
 };
 
