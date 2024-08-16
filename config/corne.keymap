@@ -54,7 +54,7 @@
     };
 };
 
-/ {
+/{
     behaviors {
         sret: space_ret {
             compatible = "zmk,behavior-tap-dance";
@@ -64,10 +64,9 @@
             bindings = <&kp SPACE>, <&kp RET>;
         };
     };
-
 };
 
-/ {
+/{
         keymap {
                 compatible = "zmk,keymap";
 
