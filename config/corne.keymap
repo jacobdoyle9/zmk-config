@@ -22,7 +22,6 @@
 /{
     macros {
         screen_left: screen_left {
-            label = "SCREEN_LEFT";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -32,7 +31,6 @@
                 ;
         };
         screen_right: screen_right {
-            label = "SCREEN_RIGHT";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -48,7 +46,6 @@
     behaviors {
         spret: space_return {
             compatible = "zmk,behavior-mod-morph";
-            label = "SPACE_RETURN";
             #binding-cells = <0>;
             bindings = <&kp SPACE>, <&kp RET>;
             mods = <(MOD_LSFT | MOD_RSFT)>;
@@ -56,7 +53,6 @@
 
         sret: space_ret {
             compatible = "zmk,behavior-tap-dance";
-            label = "SPACE_RET";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp SPACE>, <&kp RET>;
