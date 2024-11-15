@@ -5,13 +5,14 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
-/{
+/ {
     conditional_layers {
         compatible = "zmk,conditional-layers";
+
         tri_layer {
             if-layers = <1 2>;
             then-layer = <4>;
@@ -19,35 +20,41 @@
     };
 };
 
-/{
+/ {
     macros {
         screen_left: screen_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LGUI &kp LCTRL>
-                , <&macro_tap &kp LEFT>
-                , <&macro_release &kp LGUI &kp LCTRL>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI &kp LCTRL>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LGUI &kp LCTRL>;
         };
+
         screen_right: screen_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LGUI &kp LCTRL>
-                , <&macro_tap &kp RIGHT>
-                , <&macro_release &kp LGUI &kp LCTRL>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI &kp LCTRL>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LGUI &kp LCTRL>;
         };
     };
 };
 
-/{
+/ {
     behaviors {
         spret: space_return {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp SPACE>, <&kp RET>;
+
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
@@ -60,63 +67,53 @@
     };
 };
 
-/{
-        keymap {
-                compatible = "zmk,keymap";
+/ {
+    keymap {
+        compatible = "zmk,keymap";
 
-                default_layer {
-                        bindings = <
-
-   &mt LA(F4) ESC           &kp Q     &kp W     &kp F   &kp P &kp B                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &mt LC(LA(DEL)) DEL
-   &kp TAB                  &kp A     &kp R     &kp S   &kp T &kp G                 &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &sk LCTRL                 &kp Z     &kp X     &kp C   &kp D &kp V                 &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &to 3
-                                &kp LGUI    &mo 1   &mt LSHFT CAPS                      &sret &mo 2 &sk LALT
-                        
-                        >;
-                };
-                lower_layer {
-                        bindings = <
-                        
-                        
-   &bt BT_CLR   &trans    &trans       &kp UP        &trans      &trans                &none       &mt F7 N7   &mt F8 N8   &mt F9 N9   &none &mt LC(LA(INS)) INS
-   &bt BT_SEL 1 &kp LSHIFT    &kp LEFT     &kp DOWN      &kp RIGHT   &trans                &kp LSHFT   &mt F4 N4   &mt F5 N5   &mt F6 N6   &none &kp END
-   &bt BT_SEL 0 &trans    &trans       &trans        &trans      &trans                &kp N0      &mt F1 N1   &mt F2 N2   &mt F3 N3   &kp DOT &none
-                          	              &kp LGUI      &trans      &trans                        &kp BSPC    &trans      &kp HOME
-
-                        >;
-                };
-
-                raise_layer {
-                        bindings = <
-
-
-   &kp LC(LA(T))  &kp EXCL    &kp AT &none        &kp PRCNT       &kp CARET                       &kp HASH    &kp LBKT  &kp RBKT  &kp PLUS    &kp STAR    &kp PIPE
-   &kp LCTRL      &kp AMPS    &none &screen_left  &screen_right   &kp EXCL                        &kp EQUAL   &kp LPAR  &kp RPAR  &kp MINUS   &kp BSLH    &kp GRAVE
-   &kp LSHFT      &none       &none &none         &kp DLLR        &trans                          &kp CARET   &kp LBRC  &kp RBRC  &kp UNDER   &kp AMPS    &kp TILDE
-                    	    &kp LGUI            &trans          &kp DEL                         &trans    &trans    &kp RALT
-                        
-                        >;
-                };
-
-                game_layer {
-                		bindings = <
-	&kp F3          &kp ESC         &kp Q       &kp W   &kp R   &kp E           &kp J   &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
-	&mt TAB DOT     &kp LSHFT       &kp A       &kp S   &kp D   &kp F           &kp M   &kp N  &kp E     &kp I   &kp O    &kp SQT
-	&kp LALT        &kp LCTRL       &mt B G     &kp P   &kp M   &kp N           &kp K   &kp H  &kp COMMA &kp DOT &kp FSLH &to 0
-                                &kp N2  &kp N1  &kp SPACE                       &trans &to 0 &kp RALT
-                        
-                        >;
-                };
-
-                mouse_layer {
-                        bindings = <
-   &trans      &trans &kp LG(LBKT)      &mmv MOVE_UP        &kp LG(RBKT)        &trans                &none       &mwh SCROLL_UP    &none       &none       &none &none
-   &trans      &trans &mmv MOVE_LEFT    &mmv MOVE_DOWN      &mmv MOVE_RIGHT     &trans                &none       &mkp LCLK         &mkp RCLK   &mkp MCLK   &none &none
-   &trans      &trans &trans            &trans              &trans              &trans                &none       &mwh SCROLL_DOWN  &none       &none       &none
-                          	             &kp LGUI      &trans      &none                &none     &trans      &none
-                        
-                        >;
-                };
-
+        default_layer {
+            bindings = <
+&mt LA(F4) ESC  &kp Q  &kp W  &kp F     &kp P  &kp B             &kp J  &kp L  &kp U      &kp Y    &kp SEMI  &mt LC(LA(DEL)) DEL
+&kp TAB         &kp A  &kp R  &kp S     &kp T  &kp G             &kp M  &kp N  &kp E      &kp I    &kp O     &kp SQT
+&sk LCTRL       &kp Z  &kp X  &kp C     &kp D  &kp V             &kp K  &kp H  &kp COMMA  &kp DOT  &kp FSLH  &to 3
+                              &kp LGUI  &mo 1  &mt LSHFT CAPS    &sret  &mo 2  &sk LALT
+            >;
         };
+
+        lower_layer {
+            bindings = <
+&bt BT_CLR    &none       &none     &kp UP    &none      &none     &none      &mt F7 N7  &mt F8 N8  &mt F9 N9  &none    &mt LC(LA(INS)) INS
+&bt BT_SEL 1  &kp LSHIFT  &kp LEFT  &kp DOWN  &kp RIGHT  &none     &kp LSHFT  &mt F4 N4  &mt F5 N5  &mt F6 N6  &none    &kp END
+&bt BT_SEL 0  &none       &none     &none     &none      &none     &kp N0     &mt F1 N1  &mt F2 N2  &mt F3 N3  &kp DOT  &none
+                                    &kp LGUI  &trans     &trans    &kp BSPC   &trans     &kp HOME
+            >;
+        };
+
+        raise_layer {
+            bindings = <
+&kp LC(LA(T))  &kp EXCL  &kp AT  &none         &kp PRCNT      &none      &kp HASH   &kp LBKT  &kp RBKT  &kp PLUS   &kp STAR       &trans
+&none          &kp AMPS  &none   &screen_left  &screen_right  &none      &kp EQUAL  &kp LPAR  &kp RPAR  &kp MINUS  &kp PIPE       &kp GRAVE
+&kp LSHFT      &none     &none   &kp CARET     &kp DLLR       &none      &kp CARET  &kp LBRC  &kp RBRC  &kp UNDER  &kp BACKSLASH  &kp TILDE
+                                 &kp LGUI      &trans         &kp DEL    &trans     &trans    &kp RALT
+            >;
+        };
+
+        game_layer {
+            bindings = <
+&kp F3       &kp ESC    &kp Q    &kp W   &kp R   &kp E        &kp J   &kp L  &kp U      &kp Y    &kp SEMI  &kp BSPC
+&mt TAB DOT  &kp LSHFT  &kp A    &kp S   &kp D   &kp F        &kp M   &kp N  &kp E      &kp I    &kp O     &kp SQT
+&kp LALT     &kp LCTRL  &mt B G  &kp P   &kp M   &kp N        &kp K   &kp H  &kp COMMA  &kp DOT  &kp FSLH  &to 0
+                                 &kp N2  &kp N1  &kp SPACE    &trans  &to 0  &kp RALT
+            >;
+        };
+
+        mouse_layer {
+            bindings = <
+&none  &none           &kp LG(LBKT)    &mmv MOVE_UP    &kp LG(RBKT)     &none     &none   &mwh SCROLL_UP    &none      &none      &none  &none
+&none  &kp LEFT_SHIFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none     &none   &mkp LCLK         &mkp RCLK  &mkp MCLK  &none  &none
+&none  &none           &none           &none           &none            &none     &none   &mwh SCROLL_DOWN  &none      &none      &none  &kp LGUI
+                                       &trans          &none            &trans    &trans  &none
+            >;
+        };
+    };
 };
