@@ -52,6 +52,7 @@
     behaviors {
         sret: space_ret {
             compatible = "zmk,behavior-tap-dance";
+            label = "Space and Enter Tap Dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp SPACE>, <&kp RET>;
