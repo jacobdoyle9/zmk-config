@@ -50,14 +50,6 @@
 
 / {
     behaviors {
-        spret: space_return {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp RET>;
-
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-        };
-
         sret: space_ret {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
