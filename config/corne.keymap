@@ -26,24 +26,18 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LGUI &kp LCTRL>,
-                <&macro_tap>,
-                <&kp LEFT>,
-                <&macro_release>,
-                <&kp LGUI &kp LCTRL>;
+                <&macro_press &kp LGUI &kp LCTRL>,
+                <&macro_tap &kp LEFT>,
+                <&macro_release &kp LGUI &kp LCTRL>;
         };
 
         screen_right: screen_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LGUI &kp LCTRL>,
-                <&macro_tap>,
-                <&kp RIGHT>,
-                <&macro_release>,
-                <&kp LGUI &kp LCTRL>;
+                <&macro_press &kp LGUI &kp LCTRL>,
+                <&macro_tap &kp RIGHT>,
+                <&macro_release &kp LGUI &kp LCTRL>;
         };
     };
 };
