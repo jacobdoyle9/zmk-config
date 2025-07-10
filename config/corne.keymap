@@ -4,10 +4,11 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     conditional_layers {
@@ -26,18 +27,24 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp LGUI &kp LCTRL>,
-                <&macro_tap &kp LEFT>,
-                <&macro_release &kp LGUI &kp LCTRL>;
+                <&macro_press>,
+                <&kp LGUI &kp LCTRL>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LGUI &kp LCTRL>;
         };
 
         screen_right: screen_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp LGUI &kp LCTRL>,
-                <&macro_tap &kp RIGHT>,
-                <&macro_release &kp LGUI &kp LCTRL>;
+                <&macro_press>,
+                <&kp LGUI &kp LCTRL>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LGUI &kp LCTRL>;
         };
     };
 };
@@ -86,7 +93,7 @@
 
         game_layer {
             bindings = <
-&kp F3       &kp ESC    &kp Q    &kp W   &kp R   &kp E        &kp J   &kp L  &kp U      &kp Y    &kp SEMI  &kp BSPC
+&kp F3       &kp ESC    &kp Q    &kp W   &kp R   &kp E        &kp J   &kp L  &kp U      &kp Y    &kp SEMI  &kp DEL
 &mt TAB DOT  &kp LSHFT  &kp A    &kp S   &kp D   &kp F        &kp M   &kp N  &kp E      &kp I    &kp O     &kp SQT
 &kp LALT     &kp LCTRL  &mt B G  &kp P   &kp M   &kp N        &kp K   &kp H  &kp COMMA  &kp DOT  &kp FSLH  &to 0
                                  &kp N2  &kp N1  &kp SPACE    &trans  &to 0  &kp RALT
